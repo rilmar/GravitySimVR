@@ -28,14 +28,13 @@ public class PlanetTrail : MonoBehaviour {
 		trailPositions = new List<Vector3>();
 		StartCoroutine(UpdateTrail());
 
-        _lineRenderer.material = GetComponent<Renderer>().material;
     }
 
 	IEnumerator UpdateTrail() {
 
-		if(trailPositions.Count > maxPositionCount) trailPositions.RemoveAt(0);
+		if(trailPositions.Count > maxPositionCount) trailPositions.RemoveAt(trailPositions.Count - 1);
 
-		trailPositions.Add(_transform.position);
+		trailPositions.Insert(0, _transform.position);
 		_lineRenderer.SetVertexCount(trailPositions.Count);
 		
 		for(int p = 0; p < trailPositions.Count; p++) {

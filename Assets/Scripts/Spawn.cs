@@ -8,6 +8,7 @@ public class Spawn : MonoBehaviour
     public int maxPlanets;
     public int spawnRadius = 500;
     public Material mat01, mat02, mat03, mat04;
+    public GameObject trajectoryIndicator;
 
     private bool firstClick = true;
     private int numPlanets;
@@ -58,7 +59,7 @@ public class Spawn : MonoBehaviour
             firstClick = false;
             //generate value to assign a material randomly
             int matGen = Random.Range(0, 4) + 1;
-            switch (matGen)
+            /*switch (matGen)
             {
                 case 1:
                     newPlanet.GetComponent<Renderer>().material = mat01;
@@ -72,7 +73,7 @@ public class Spawn : MonoBehaviour
                 case 4:
                     newPlanet.GetComponent<Renderer>().material = mat04;
                     break;
-            }
+            }*/
 
         }
 
